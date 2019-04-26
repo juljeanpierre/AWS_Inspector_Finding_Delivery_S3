@@ -5,3 +5,10 @@ https://www.youtube.com/watch?v=g4wdm488mkE
 Python, Boto3, and AWS S3: Demystified
 https://realpython.com/python-boto3-aws-s3/
 
+
+Steps to complete:
+1. denote all steps needed to complete this process
+2. create a workflow diagram
+3. create all policies needed ( refine later )
+4. identify the security best practices
+5.
