@@ -1,0 +1,7 @@
+
+Extracting Data from a JSON Response in Python
+https://www.youtube.com/watch?v=g4wdm488mkE
+
+Python, Boto3, and AWS S3: Demystified
+https://realpython.com/python-boto3-aws-s3/
+
