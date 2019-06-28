@@ -1,33 +1,37 @@
 # Inspector | SNS | Lambda | S3 
 
-Push Inspector findings automatically to an S3 bucket after a vulnerability assessment scan has completed.
+This article helps you Push Inspector findings automatically to an S3 bucket after a vulnerability assessment scan has completed.
 
 ![](Inspector_Lambda_S3.png)
 
 
 ## Problem:
-##### REF: Inspector | SNS | Lambda | SNS
+##### Inspector | SNS | Lambda | SNS 
 
 The original configuration had Inspector finding sent as emailed url's via SNS, 
 However through deep diving I discovered that the pre-signed url's were only valid for 15min. 
-Extending the 15min window is not possible because the url is world readable, 
-so the longer it is valid the longer a potential attacker has to download the file before the link expires.
+Extending the 15min window is not possible at this time and because the url is world readable, 
+the longer it is valid the longer a potential attacker has to download the file before the link expires.
+
+From a "Security risk & assessment" standpoint, sending your AWS Inspector findings as an email attachment
+creates vulnerabilities. As the reports could be leaked or re-shared, exposing vulnerabilities in your cloud architecture.
+
 
 ## Getting Started:
+##### Resolution:
  
-
-    1) Create a S3 bucket and attach the bucket policy. 
-       You will need to fill out the policy to include your S3 bucket name.
+* Create a S3 bucket and attach the bucket policy. 
+  You will need to complete the policy by including your S3 bucket name.
     
-    2) Edit the IAM Role attached to your lambda function to include 
-       [s3:ListBucket", "s3:GetBucketLocation", "s3:GetObject", "s3:PutObject"]
+* Edit the IAM Role attached to your lambda function to include 
+  [s3:ListBucket", "s3:GetBucketLocation", "s3:GetObject", "s3:PutObject"]
     
-    3) Create a Lambda function in Python3.7 with the following code attached in file "Inspector_Lambda_s3.py". 
-       Edit the line 63 which specifies the S3 bucket name.
+* Create a Lambda function in Python3.7 with the following code attached in file "Inspector_Lambda_s3.py". 
+  Edit the line 63 which specifies the S3 bucket name.
     
-    4) Create a SNS topic with the Lambda Function as subscriber.
+* Create a SNS topic with the Lambda Function as subscriber.
     
-    5) Once the scan is finished, it will upload the full report and the findings(in .json format) to the S3 bucket.
+* Once the scan is finished, it will upload the full report and the findings(in .json format) to the S3 bucket.
 
 
 ### SNS Access policy

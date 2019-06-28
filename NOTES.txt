@@ -7,8 +7,9 @@ https://realpython.com/python-boto3-aws-s3/
 
 
 Steps to complete:
-1. denote all steps needed to complete this process
-2. create a workflow diagram
-3. create all policies needed ( refine later )
-4. identify the security best practices
-5.
+1. denote all steps needed to complete this process [Done]
+2. create a workflow diagram [Done]
+3. create all policies needed ( refine later ) [Done]
+4. identify the security best practices [Done]
+5. Add #Summery; in point form.
+
