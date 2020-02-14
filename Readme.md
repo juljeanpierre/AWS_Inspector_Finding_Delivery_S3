@@ -1,4 +1,4 @@
-# Inspector | SNS | Lambda | S3 
+# [Inspector | SNS | Lambda | S3 ](https://juljeanpierre.github.io/AWS_Inspector_Finding_Delivery_S3/)
 
 This article helps you Push Inspector findings automatically to an S3 bucket after a vulnerability assessment scan has completed.
 
